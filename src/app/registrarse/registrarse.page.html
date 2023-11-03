@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">registrarse</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form #formulario="ngForm" (ngSubmit)="registrarUsuario()">
+    <ion-list>
+      <ion-item>
+        <h1>Registrar usuario</h1>
+      </ion-item>
+      <ion-item>
+        <ion-input name="emailForm" label="Correo:" placeholder="ejemplo: ejemplo@correo.com" [(ngModel)]="emailForm" required
+        ></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input  name="passwordForm" label="Contraseña:" placeholder="ejemplo: contraseña123"  [(ngModel)]="passwordForm" required
+        minlength="6"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="nombreUsuarioForm" label="Nombre usuario:" placeholder="ejemplo: ItaloPipo" [(ngModel)]="nombreUsuarioForm" required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input  name="edadForm" label="edad:" placeholder="mayor a 18 años" [(ngModel)]="edadForm" required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="telefonoForm" label="telefono:" placeholder="ejemplo: 949439922" [(ngModel)]="telefonoForm" required
+        ></ion-input>
+      </ion-item>
+      
+  
+      
+    </ion-list>
+    
+    <ion-button [routerLink]="['/login']">Cancelar</ion-button>
+    <ion-button type="submit" [attr.disabled]="formulario.invalid ">Registrar usuario</ion-button>
+    
+    </form>
+</ion-content>
